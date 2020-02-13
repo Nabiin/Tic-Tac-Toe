@@ -44,7 +44,7 @@ var player1 , player2;
     function test(){
         player1 = document.getElementById('player1name').value;
          player2=document.getElementById('player2name').value; 
-         document.querySelector('.pvs').textContent= player1 + '   \\vs/    ' + player2;
+         document.querySelector('.pvs').textContent= player1 + '  vs   ' + player2;
    }
 
     document.querySelector('#nextpage').addEventListener('click', function(){
