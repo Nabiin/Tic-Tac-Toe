@@ -6,7 +6,7 @@
 var dc=0;
 var score , activeplayer , round , tick;
 var player1 , player2;
-    var cbk=0;
+    var cbk;
    var  arr=[];
     var  testarr;
     var nameentercheck;
@@ -18,7 +18,7 @@ var player1 , player2;
   function fun(){
       console.log(arr.length)
     nameentercheck=0;
-
+cbk=1;
       arr=[];
     round =0 ;
     activeplayer =0;
@@ -38,7 +38,9 @@ var player1 , player2;
      document.getElementById('bu7').textContent= '';
      document.getElementById('bu8').textContent= '';
      document.getElementById('bu9').textContent= '';
-   
+    document.getElementById('player1name').value='';
+    document.getElementById('player2name').value='';
+
 
 
     };
@@ -46,21 +48,27 @@ var player1 , player2;
 
 
     document.querySelector('#nextpage').addEventListener('click', function(){
-        
         //test();
         player1 = (document.getElementById('player1name').value).toUpperCase();
         player2=(document.getElementById('player2name').value).toUpperCase(); 
-        document.querySelector('.pvs').textContent= player1 + '   VS    ' + player2;
-        console.log(typeof(player2))
+            console.log(typeof(player2))
           if(player2!=='' && player1!==''){
           nameentercheck=1;
-          console.log("Working");
+          console.log('nametestcheck' , nameentercheck)
+
           }
+          if(nameentercheck==1){
+            // document.querySelector('.pvs').style.color = 'black';
+            document.querySelector('.pvs').textContent= player1 + '   VS    ' + player2;
+        }
+        if(cbk%2==0){
+            document.querySelector('.pvs').style.color = 'white';
+        }else{
+        document.querySelector('.pvs').style.color = 'black';
+           
+        }
+         
     })
-
-
-//button events
-
 
 
 
@@ -190,14 +198,16 @@ function winningshow(val){
 document.querySelector('#cc').addEventListener('click',function(){
     cbk++;
     console.log(cbk);
-
-
     if(cbk%2==0){
-        document['body'].style["background-color"] = 'rgb(223, 216, 216)';
-        
+        nightmodeon();
+
+    // document['body'].style["background-color"] = 'black';
 
     }else{
-        document['body'].style["background-color"] = 'black';
+    // document['body'].style["background-color"] = 'black';
+                 nightmodeoff();        
+
+
 
     }
 })
@@ -206,8 +216,15 @@ document.querySelector('#cc').addEventListener('click',function(){
 
 
 
-console.log("hello world!")
-console.log("hello bro its is test")
+function usernameerror(){
+    document.querySelector('.pvs').textContent= 'Error !!';
+    // alert("Please Enter Your Username");
+    //document.querySelector('.pvs').classList.add('er');
+    document.querySelector('.pvs').style.color = 'red';
+    
+
+
+}
 
 
 document.querySelector('#bu1').addEventListener('click' , function(){
@@ -216,7 +233,9 @@ document.querySelector('#bu1').addEventListener('click' , function(){
         console.log("i ma clicked")
         nextplayer();
         check();
-    }
+    }else{
+        usernameerror();   
+       }
    
 });
 document.querySelector('#bu2').addEventListener('click' , function(){
@@ -224,6 +243,8 @@ document.querySelector('#bu2').addEventListener('click' , function(){
     document.getElementById('bu2').textContent= tick;
     nextplayer();
     check();
+    }else{
+     usernameerror();
     }
 });
 document.querySelector('#bu3').addEventListener('click' , function(){
@@ -231,7 +252,9 @@ document.querySelector('#bu3').addEventListener('click' , function(){
     document.getElementById('bu3').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 
 });
 document.querySelector('#bu4').addEventListener('click' , function(){
@@ -239,7 +262,9 @@ document.querySelector('#bu4').addEventListener('click' , function(){
     document.getElementById('bu4').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 
 });
 document.querySelector('#bu5').addEventListener('click' , function(){
@@ -247,34 +272,78 @@ document.querySelector('#bu5').addEventListener('click' , function(){
         document.getElementById('bu5').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 });
 document.querySelector('#bu6').addEventListener('click' , function(){
     if(nameentercheck===1){
     document.getElementById('bu6').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 });
 document.querySelector('#bu7').addEventListener('click' , function(){
     if(nameentercheck===1){
     document.getElementById('bu7').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 });
 document.querySelector('#bu8').addEventListener('click' , function(){
     if(nameentercheck===1){
     document.getElementById('bu8').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 });
 document.querySelector('#bu9').addEventListener('click' , function(){
     if(nameentercheck===1){
     document.getElementById('bu9').textContent= tick;
     nextplayer();
     check();
-    }
+    }else{
+        usernameerror();   
+       }
 });
 document.getElementById('resetall').addEventListener('click', fun);
+
+
+//night mode
+function nightmodeon(){
+    console.log('on');
+    document['body'].style["background-color"] = 'black';
+    document.querySelector('.inputusername').style.color = 'White';
+    document.querySelector('#nextpage').style.color = 'White';
+    document.querySelector('#nextpage').style['border-color']= 'white';
+
+    if(nameentercheck!==1){
+    document.querySelector('.pvs').style.color = 'RED';
+    }else{
+    document.querySelector('.pvs').style.color = 'White';
+    }
+    document.querySelector('.winner').style.color = 'White';
+
+
+}
+function nightmodeoff(){
+    console.log('off')
+    document['body'].style["background-color"] = 'rgb(223, 216, 216)';
+    document.querySelector('.inputusername').style.color = 'black';
+    document.querySelector('#nextpage').style.color = 'black';
+    document.querySelector('#nextpage').style['border-color']= 'black';
+    if(nameentercheck!==1){
+        document.querySelector('.pvs').style.color = 'RED';
+    }else{
+        document.querySelector('.pvs').style.color = 'black';
+
+    }
+    document.querySelector('.winner').style.color = 'White';
+
+}
