@@ -9,6 +9,7 @@ var player1 , player2;
     var cbk=0;
    var  arr=[];
     var  testarr;
+    var nameentercheck;
   fun();
 
 
@@ -16,6 +17,8 @@ var player1 , player2;
 
   function fun(){
       console.log(arr.length)
+    nameentercheck=0;
+
       arr=[];
     round =0 ;
     activeplayer =0;
@@ -26,7 +29,6 @@ var player1 , player2;
 
      document.querySelector('.pvs').textContent= '';
      document.querySelector('.win').textContent= '';
-
      document.getElementById('bu1').textContent= '';
      document.getElementById('bu2').textContent= '';
      document.getElementById('bu3').textContent= '';
@@ -41,16 +43,19 @@ var player1 , player2;
 
     };
 
-    function test(){
-        player1 = document.getElementById('player1name').value;
-         player2=document.getElementById('player2name').value; 
-         document.querySelector('.pvs').textContent= player1 + '   \\vs/    ' + player2;
-   }
+
 
     document.querySelector('#nextpage').addEventListener('click', function(){
         
-        test();
-  console.log(player1, player2)
+        //test();
+        player1 = (document.getElementById('player1name').value).toUpperCase();
+        player2=(document.getElementById('player2name').value).toUpperCase(); 
+        document.querySelector('.pvs').textContent= player1 + '   VS    ' + player2;
+        console.log(typeof(player2))
+          if(player2!=='' && player1!==''){
+          nameentercheck=1;
+          console.log("Working");
+          }
     })
 
 
@@ -204,58 +209,72 @@ document.querySelector('#cc').addEventListener('click',function(){
 console.log("hello world!")
 console.log("hello bro its is test")
 
+
 document.querySelector('#bu1').addEventListener('click' , function(){
-    document.getElementById('bu1').textContent= tick;
-    console.log("i ma clicked")
-    nextplayer();
-    check();
+    if(nameentercheck===1){
+        document.getElementById('bu1').textContent= tick;
+        console.log("i ma clicked")
+        nextplayer();
+        check();
+    }
+   
 });
 document.querySelector('#bu2').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu2').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.querySelector('#bu3').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu3').textContent= tick;
     nextplayer();
     check();
+    }
 
 });
 document.querySelector('#bu4').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu4').textContent= tick;
     nextplayer();
     check();
+    }
 
 });
 document.querySelector('#bu5').addEventListener('click' , function(){
-    document.getElementById('bu5').textContent= tick;
+    if(nameentercheck===1){
+        document.getElementById('bu5').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.querySelector('#bu6').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu6').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.querySelector('#bu7').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu7').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.querySelector('#bu8').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu8').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.querySelector('#bu9').addEventListener('click' , function(){
+    if(nameentercheck===1){
     document.getElementById('bu9').textContent= tick;
     nextplayer();
     check();
-
+    }
 });
 document.getElementById('resetall').addEventListener('click', fun);

@@ -76,17 +76,13 @@ table{
     left: 20px;
 }
 input{
-    /*  */
-         
-  
-    /*  */
     font-family: 'Orbitron', sans-serif;
     background-color: rgb(255, 255, 255);
-    border: solid;
+    /* border: solid; */
    background-color: rgb(223, 216, 216);
     text-align: center  ;
     border-radius: 10px;
-    border: none;
+    /* border: none; */
     height: 30px;
     color:black;
     width:200px;
