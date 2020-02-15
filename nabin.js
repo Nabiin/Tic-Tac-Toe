@@ -1,8 +1,3 @@
-//tewo mero finish
-//button haru
-//color change winign color change
-//
-
 var dc=0;
 var score , activeplayer , round , tick;
 var player1 , player2;
@@ -15,15 +10,11 @@ var c1,c2,c3,c4,c5,c6,c7,c8,c9;
   fun();
 
   function fun(){
-      console.log(arr.length)
-    nameentercheck=0;
-
-      arr=[];
+   nameentercheck=0;
+    arr=[];
     round =0 ;
     activeplayer =0;
-    console.log(activeplayer)
-      tick = "X";
-      console.log("hello world");
+    tick = "X";
      document.querySelector('.win').classList.remove('winning');
      document.querySelector('.win').classList.remove('winner');
 
@@ -58,10 +49,8 @@ var c1,c2,c3,c4,c5,c6,c7,c8,c9;
         if(nameentercheck!==1){
             player1 = (document.getElementById('player1name').value).toUpperCase();
             player2=(document.getElementById('player2name').value).toUpperCase(); 
-                console.log(typeof(player2))
               if(player2!=='' && player1!==''){
               nameentercheck=1;
-              console.log('nametestcheck' , nameentercheck)
     
               }
               if(nameentercheck==1){
@@ -90,7 +79,6 @@ var c1,c2,c3,c4,c5,c6,c7,c8,c9;
 
 function nextplayer(){
  activeplayer===0 ? activeplayer = 1 : activeplayer=0;
-console.log(activeplayer)
  if(activeplayer==0){
       tick = 'X';
 //  document.querySelector('.pvs').textContent= player1 + '  turns ' + tick;
@@ -117,7 +105,6 @@ function check(){
   nu = document.querySelector('#bu'+i).textContent;
   arr.push(nu);
     }
-    console.log(arr);
 
     testarr=['X','O'];
 
@@ -218,7 +205,6 @@ function winningshow(val){
 
 document.querySelector('#cc').addEventListener('click',function(){
     cbk++;
-    console.log(cbk);
     if(cbk%2==0){
         nightmodeon();
 
@@ -252,7 +238,6 @@ document.querySelector('#bu1').addEventListener('click' , function(){
     if(c1===0){
         if(nameentercheck===1){
             document.getElementById('bu1').textContent= tick;
-            console.log("i ma clicked")
             nextplayer();
             check();
             c1++;
@@ -372,7 +357,6 @@ document.getElementById('resetall').addEventListener('click', fun);
 
 //night mode
 function nightmodeon(){
-    console.log('on');
     document['body'].style["background-color"] = 'black';
     document.querySelector('.inputusername').style.color = 'White';
     document.querySelector('#nextpage').style.color = 'White';
@@ -394,7 +378,6 @@ function nightmodeon(){
 
 }
 function nightmodeoff(){
-    console.log('off')
     document['body'].style["background-color"] = 'rgb(223, 216, 216)';
     document.querySelector('.inputusername').style.color = 'black';
     document.querySelector('#nextpage').style.color = 'black';
