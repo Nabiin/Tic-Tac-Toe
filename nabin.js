@@ -6,7 +6,7 @@
 var dc=0;
 var score , activeplayer , round , tick;
 var player1 , player2;
-    var cbk;
+    var cbk=1;
    var  arr=[];
     var  testarr;
     var nameentercheck;
@@ -17,7 +17,7 @@ var c1,c2,c3,c4,c5,c6,c7,c8,c9;
   function fun(){
       console.log(arr.length)
     nameentercheck=0;
-cbk=1;
+
       arr=[];
     round =0 ;
     activeplayer =0;
@@ -40,9 +40,11 @@ cbk=1;
      document.getElementById('bu9').textContent= '';
     document.getElementById('player1name').value='';
     document.getElementById('player2name').value='';
+    document.querySelector('#px').textContent= '';
+    document.querySelector('#po').textContent='';
 
  document.querySelector('.lol1').classList.remove("round");
- document.querySelector('.lol1').classList.remove("round");
+ document.querySelector('.lol2').classList.remove("round");
  c1=0;c2=0;c3=0;c4=0;c5=0;c6=0;c7=0;c8=0;c9=0;
 
 
@@ -63,9 +65,13 @@ cbk=1;
     
               }
               if(nameentercheck==1){
-                // document.querySelector('.pvs').style.color = 'black';
                 document.querySelector('.pvs').textContent= player1 + '  VS  ' + player2;
                document.querySelector('.lol1').classList.add("round");
+               document.querySelector('#px').textContent= player1 + '  -  X';
+               document.querySelector('#po').textContent= player2 + '  -  O';
+
+
+
     
     
                 if(cbk%2==0){
@@ -74,7 +80,6 @@ cbk=1;
                 document.querySelector('.pvs').style.color = 'black';
             }
         }
-        
         };
 
          
@@ -234,7 +239,7 @@ document.querySelector('#cc').addEventListener('click',function(){
 
 function usernameerror(){
     document.querySelector('.pvs').textContent= 'Error !!';
-    // alert("Please Enter Your Username");
+     alert("Please Enter Your Name");
     //document.querySelector('.pvs').classList.add('er');
     document.querySelector('.pvs').style.color = 'red';
     
@@ -376,9 +381,15 @@ function nightmodeon(){
     if(nameentercheck!==1){
     document.querySelector('.pvs').style.color = 'RED';
     }else{
+        if(cbk%2==0){
     document.querySelector('.pvs').style.color = 'White';
+      }
     }
-    document.querySelector('.winner').style.color = 'White';
+    document.querySelector('.win').style.color = 'White'; 
+    document.querySelector('.dark0').style.color = 'White'; 
+    document.querySelector('.dark1').style.color = 'White'; 
+
+
 
 
 }
@@ -393,6 +404,10 @@ function nightmodeoff(){
     }else{
         document.querySelector('.pvs').style.color = 'black';
     }
-    document.querySelector('.winner').style.color = 'black';
+    document.querySelector('.win').style.color = 'black'
+    document.querySelector('.dark0').style.color = 'black'; 
+    document.querySelector('.dark1').style.color = 'black'; 
+
+
 
 }

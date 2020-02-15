@@ -41,11 +41,24 @@ table{
     
  }
  
-.buttonwoladiv{
+/* .buttonwoladiv{
   margin-top: 100px;
+} */
+.buttonwoladiv{
+    /* background-color: crimson; */
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
+.bb{
+/* FOR  BUTTON */
+}
+.pxo{
 
-
+    font-size: 30px;
+}
 
 .inputusername{
     font-family: 'Orbitron', sans-serif;
@@ -110,7 +123,6 @@ input:focus{
 }
 
  .mbutton:hover{
-    margin-left: 60px;
     box-shadow: inset 5px 5px 4px rgb(75, 73, 73) , inset -5px -5px 4px rgb(255, 255, 255) ;
     padding: 10px;
     height: 50px;
@@ -124,7 +136,7 @@ input:focus{
 } 
 
 .mbutton{
-    margin-left: 60px;
+   
     box-shadow: inset 5px 5px 4px  rgb(255, 255, 255), inset -5px -5px 4px rgb(75, 73, 73) ;
     padding: 10px;
     height: 50px;
@@ -148,19 +160,6 @@ input:focus{
    }
    
    
-.act{
-}
-.actchild{
-  
-}
-/* .round{
-    margin-top: 50px;
-    height: 30px;
-    width: 30px;
-    background-color: rgb(255, 255, 255);
-    border: solid;
-    border-radius: 50px;
-} */
 
 .round{
     margin-top: 50px;
